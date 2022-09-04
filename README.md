@@ -73,5 +73,5 @@ https://laodong.vn/xa-hoi/hai-phong-phan-dau-den-thang-62023-se-xu-ly-triet-de-s
 
 ## REF:
 - Ngôn ngữ: [Python 3](https://www.python.org/downloads/)
-- IDE, công cụ: Colab, Google drive
+- IDE, công cụ: [Colab](https://colab.research.google.com/), Google drive
 - Library: [requests](https://requests.readthedocs.io/en/latest/), [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
