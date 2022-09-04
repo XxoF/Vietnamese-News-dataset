@@ -7,7 +7,10 @@ Bộ dữ liệu gồm 56,903 bài báo, được crawl tự động từ trang 
 2. [Thời sự](https://laodong.vn/thoi-su/) : 19700 bài báo
 3. [Xã hội](https://laodong.vn/xa-hoi/) : 24117 bài báo
 
-### Structure
+Bộ dữ liệu được lấy tự động theo tag HTML của trang web. Chỉ lấy text gồm chữ viết, dấu câu và số. Phần hình ảnh, âm thanh, dòng chú thích, watermark, hyperlink ... đã được lượt bỏ. 
+
+
+## Folder Structure
 ```
 VietNews
 └───Laodong.vn 
@@ -34,15 +37,8 @@ VietNews
     └───xahoi.txt
 ```
 
-Mỗi file txt chứa danh sách các bài báo thuộc chủ đề tương ứng. Ví dụ trong file **_xahoi.txt_**
-```
-https://laodong.vn/xa-hoi/trao-tang-sach-cho-can-bo-chien-si-vung-5-hai-quan-1064033.ldo
-https://laodong.vn/y-te/ninh-binh-e-de-so-sai-trong-cong-tac-dau-thau-thuoc-vat-tu-y-te-1063925.ldo
-...
-https://laodong.vn/xa-hoi/hai-phong-phan-dau-den-thang-62023-se-xu-ly-triet-de-sim-rac-cuoc-goi-rac-1064028.ldo
-```
-
-Mỗi bài báo được lưu trong file xml. File sẽ có các tag như sau
+## Dataset Structure
+Mỗi bài báo được lưu trong file xml. Nội dung trong file sẽ sắp xếp theo các tag như sau:
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -52,14 +48,30 @@ Mỗi bài báo được lưu trong file xml. File sẽ có các tag như sau
   <title> Tiêu đề bài báo </title>
   <author> Tên tác giả </author>
   <time> Thời gian bài báo được đăng tải </time>
-  <header> Đoạn văn đầu bài báo. Có thể được xem là tóm tắt của bài báo </header>
-  <text> Nội dung của bài báo </text>
+  <header> Đoạn văn đầu tiên của bài báo, do chính tác giả viết. Có thể được xem là tóm tắt của bài viết. </header>
+  <text> Nội dung của tin tức. </text>
 </tên file>
+
+```
+### URL list
+Mỗi file txt chứa danh sách các bài báo thuộc chủ đề tương ứng. Ví dụ trong file **_xahoi.txt_**
+```
+https://laodong.vn/xa-hoi/trao-tang-sach-cho-can-bo-chien-si-vung-5-hai-quan-1064033.ldo
+https://laodong.vn/y-te/ninh-binh-e-de-so-sai-trong-cong-tac-dau-thau-thuoc-vat-tu-y-te-1063925.ldo
+...
+https://laodong.vn/xa-hoi/hai-phong-phan-dau-den-thang-62023-se-xu-ly-triet-de-sim-rac-cuoc-goi-rac-1064028.ldo
 ```
 
 
-## TODO:
-- [ ] Tiền xử lý bộ dữ liệu
-- [ ] Thêm số lượng chủ đề
-- [ ] Thu thập thêm từ các trang báo khác
 
+## TODO:
+- [ ] Kiểm tra nội dung của các bài báo, lượt bỏ những dữ liệu không phù hợp.
+- [ ] Tiền xử lý bộ dữ liệu.
+- [ ] Thêm số lượng chủ đề.
+- [ ] Thu thập thêm từ các trang báo khác.
+
+
+## REF:
+- Ngôn ngữ: [Python 3](https://www.python.org/downloads/)
+- IDE, công cụ: Colab, Google drive
+- Library: [requests](https://requests.readthedocs.io/en/latest/), [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
