@@ -9,7 +9,7 @@ Bộ dữ liệu gồm 56,903 bài báo, được crawl tự động từ trang 
 
 ### Structure
 ```
-dataset
+VietNews
 └───Laodong.vn 
     ├───The thao 
     |   ├───n0.xml
